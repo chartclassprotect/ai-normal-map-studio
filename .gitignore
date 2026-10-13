@@ -1,0 +1,45 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual envs
+.venv/
+venv/
+env/
+ENV/
+
+# Build / dist
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Model weights & caches (large, do not commit)
+models/weights/*.onnx
+models/weights/*.pt
+models/weights/*.safetensors
+models/weights/*.bin
+.cache/
+huggingface/
+
+# Generated outputs
+outputs/
+*.nrm.png
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
