@@ -1,0 +1,32 @@
+# ai-normal-map-studio pipeline configuration
+version: 1
+
+ingest:
+  accepted_formats: [png, tif, tiff, exr, jpg, bmp]
+  max_resolution: 8192
+  auto_grayscale: true
+
+normalize:
+  mode: height_to_normal   # height_to_normal | diffuse_to_normal | albedo_to_normal
+  invert_height: false
+  height_scale: 1.0
+
+infer:
+  backend: onnxruntime
+  device: auto             # auto | cpu | cuda
+  model: models/weights/nmgen_v4.onnx
+  tile_size: 512
+  tile_overlap: 32
+  batch_size: 4
+
+postprocess:
+  flip_green_channel: false   # DirectX vs OpenGL convention
+  strength: 1.0
+  smooth_edges: true
+  edge_radius: 1
+
+output:
+  format: png
+  bit_depth: 8
+  suffix: _normal
+  write_metadata: true
