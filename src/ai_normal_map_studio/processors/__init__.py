@@ -1,0 +1,1 @@
+"""Processors. Pure-ish transforms over the job context."""
